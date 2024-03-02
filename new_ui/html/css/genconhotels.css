@@ -1,0 +1,70 @@
+@charset "utf-8";
+body.light-mode {
+	color: rgb(14, 14, 14);
+	background-color: rgb(254, 254, 254);
+}
+body.dark-mode {
+	color: rgb(254, 254, 254);
+	background-color: rgb(14, 14, 14);
+}
+.genconhotels-main {
+	background: url('../images/indianapolis-downtown-by-tpsdave.jpg') no-repeat center top;
+	background-size: cover;
+	max-height: 300px;
+	min-height: 300px;
+}
+.genconhotels-main h1, .genconhotels-mobile-main h2 {
+	font-family: serif;
+	font-weight: 800;
+	letter-spacing: 2pt;
+	margin: auto auto 4pt;
+}
+.genconhotels-main h1 {
+	color: rgba(253,251,250,0.85);
+	text-shadow: 2pt 1.25pt 0.75pt rgba(0,0,0,0.85);
+	font-size: 72pt;
+}
+body.light-mode .genconhotels-mobile-main h2 {
+	margin: 8pt auto 4pt;
+	color: rgb(2,4,5);
+}
+.border-gencon-dark, .border-gencon-dark-row {
+	border-color: #212529 !important;
+	border-style: solid;
+	border-width: 1px;
+}
+.border-gencon-dark-row {
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+}
+body.light-mode .border-gencon-dark-row-header {
+	background-color: rgb(231, 231, 231);
+}
+body.dark-mode .border-gencon-dark-row-header {
+	background-color: rgb(48, 48, 48);
+}
+#Gencon-Hotels, .genconhotels-options {
+	max-width: 958px;
+}
+@media (max-width: 575.9999px) {
+	#Gencon-Hotels {
+		font-size: 9pt;
+	}
+}
+.hidden-genevieve {
+	z-index: 1000;
+	float:none;
+	height: 100%;
+	width: 100%;
+	background: url("../images/genevieve.png") center no-repeat;
+	background-size: contain;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	scroll: none;
+}

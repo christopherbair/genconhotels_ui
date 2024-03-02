@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Gen Con Hotels</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+		<link rel="stylesheet" href="css/genconhotels.css">
+	</head>
+	<body class="container-fluid g-0 light-mode position-absolute" id="body">
+		<div class="d-none hidden-genevieve position-absolute" id="hiddenGenevieve" style="opacity:0;"></div>
+		<section class="d-none d-md-flex container-fluid genconhotels-main">
+			<h1 class="d-flex">Gen Con Hotels</h1>
+		</section>
+		<section class="mobile-scoreboard d-flex d-md-none container-fluid genconhotels-mobile-main">
+			<h2 class="d-flex pt-5">Gen Con Hotels</h2>
+		</section>
+		<p class="small text-center d-none d-md-block"><em>photo by <a href="https://pixabay.com/en/indianapolis-indiana-city-urban-1872528/" target="_blank">tpsdave</a> under a <a href="https://commons.wikimedia.org/w/index.php?curid=62117322" target="_blank">CC0 license</a>.</em></p>
+		<section class="container-fluid genconhotels-details mb-4">
+			<div class="d-block text-center float-none pt-2 pb-0">
+				<h3>Last Status</h3>
+			</div>
+			<div class="d-block text-center float-none pt-0 pb-3">
+				<h6>August 1, 2024 08:00:00 (-0600)</h6>
+			</div>
+			<div class="container py-2 px-3 border-gencon-dark border-2" id="Gencon-Hotels">
+				<div class="row">
+					<div class="col-7 border-1"><strong>Room Name</strong></div>
+					<div class="col-2 border-1"><strong>Rate</strong></div>
+					<div class="col-1 border-1 text-center"><strong>Th</strong></div>
+					<div class="col-1 border-1 text-center"><strong>Fr</strong></div>
+					<div class="col-1 border-1 text-center"><strong>Sa</strong></div>
+				</div>
+				<div class="row border-gencon-dark-row border-gencon-dark-row-header">
+					<div class="col-12"><i class="bi bi-caret-down-square-fill"></i>&nbsp;&nbsp;JW Marriott Indianapolis (10 S West St) 0.1 Miles</div>
+				</div>
+				<div class="row border-gencon-dark-row">
+					<div class="col-7 border-1">2 Queens</div>
+					<div class="col-2 border-1">$999</div>
+					<div class="col-1 border-1 text-center">Y</div>
+					<div class="col-1 border-1 text-center">Y</div>
+					<div class="col-1 border-1 text-center">Y</div>
+				</div>
+				<div class="row border-gencon-dark-row border-gencon-dark-row-header">
+					<div class="col-12"><i class="bi bi-caret-down-square-fill"></i>&nbsp;&nbsp;Westin Indianapolis (241 W Washington St) 0.0 Miles</div>
+				</div>
+				<div class="row border-gencon-dark-row">
+					<div class="col-7 border-1">2 Queens</div>
+					<div class="col-2 border-1">$799</div>
+					<div class="col-1 border-1 text-center">Y</div>
+					<div class="col-1 border-1 text-center">Y</div>
+					<div class="col-1 border-1 text-center">Y</div>
+				</div>
+			</div>
+		</section>
+		<section class="container genconhotels-options">
+			<div class="row">
+				<div class="offset-md-1 col-md-3 col-sm-4 col-xs-12 my-2">
+					<div class="d-block float-none">
+						<input class="form-check-input" type="checkbox" id="alerts_on" name="alerts_on" onChange="alertsEnabled()" value="Enabled">
+						<label class="form-check-label" for="alerts_on">
+							Enable Alerts
+						</label>
+					</div>
+					<div class="d-block float-none">
+						<input class="form-check-input" type="checkbox" id="alerts_skywalk" name="alerts_skywalk" onChange="alertsEnabled()" value="Disabled" disabled="disabled">
+						<label class="form-check-label" for="alerts_skywalk">
+							On Skywalk
+						</label>
+					</div>
+					<div class="d-block float-none">
+						<input class="form-check-input" type="checkbox" id="alerts_blocks" name="alerts_blocks" onChange="alertsEnabled()" value="Disabled" disabled="disabled">
+						<label class="form-check-label" for="alerts_blocks">
+							On Block(s)
+						</label>
+					</div>
+				</div>
+				<div class="offset-md-1 col-md-3 col-sm-4 col-xs-12 my-2">
+					<div class="d-block float-none">
+						<input class="form-check-input" type="checkbox" id="audio_alerts" name="audio_alerts" onChange="alertsEnabled()" value="Disabled" disabled="disabled">
+						<label class="form-check-label" for="audio_alerts">
+							Audio Alerts
+						</label>
+					</div>
+					<div class="d-block float-none">
+						<input class="form-check-input" type="radio" id="audio_quiet" name="audio_quiet" onChange="alertRadio_Quiet()" value="Disabled" disabled="disabled">
+						<label class="form-check-label" for="audio_quiet">
+							Subtle Alert
+						</label>
+					</div>
+					<div class="d-block float-none">
+						<input class="form-check-input" type="radio" id="audio_loud" onChange="alertRadio_Loud()" value="Disabled" disabled="disabled">
+						<label class="form-check-label" for="audio_loud">
+							Loud Alert
+						</label>
+					</div>
+				</div>
+				<div class="offset-md-1 col-md-3 col-sm-4 col-xs-12 my-2">
+					<div class="d-block float-none">
+						<input class="form-check-input" type="checkbox" id="alert_open_portal" name="open_portal" onChange="alertsEnabled()" value="Disabled" disabled="disabled">
+						<label class="form-check-label" for="audio_alerts">
+							Open Portal on Alert
+						</label>
+					</div>
+					<div class="d-block float-none">
+						<label class="form-label" for="portal_url">
+							Portal URL:
+						</label>
+						<input class="form-control w-100" type="text" id="alert_open_portal_url" name="portal_url" onChange="alertPortalUrl()" disabled="disabled">
+					</div>
+					<div class="d-block float-none">
+						<div id="alert_open_portal_url_check"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="offset-4 col-4 my-4 offset-md-5 col-3">
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" role="switch" id="modeLightDark" onChange="changeMode()">
+						<label class="form-check-label" for="modeLightDark" id="modeLightDarkLabel">Light Mode</label>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="container genconhotels-thanks py-5">
+			<div class="row">
+				<div class="col text-center">
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input name="cmd" type="hidden" value="_donations">
+						<input name="business" type="hidden" value="U9W4PB2ZHCSTN">
+						<input name="item_name" type="hidden" value="Beer Money">
+						<input name="currency_code" type="hidden" value="USD">
+						<input alt="Donate with PayPal button" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" title="PayPal - The safer, easier way to pay online!" type="image">
+					</form>
+					<h4>Thank you to all of the <a href="/thankyou.html">DONORS!</a></h4>
+					<h6>Donations go to beer money this year!</h6>
+				</div>
+			</div>
+		</section>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<script src="js/genconhotelsextra.js"></script>
+		<script src="js/genevieve.js"></script>
+	</body>
+</html>
